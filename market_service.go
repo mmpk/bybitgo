@@ -18,23 +18,23 @@ func (s *BybitClientRequest) GetServerTime(ctx context.Context, opts ...RequestO
 	return GetServerResponse(err, data)
 }
 
-func (s *BybitClientRequest) GetMarketKline(ctx context.Context, opts ...RequestOption) (res *ServerResponse, err error) {
+func (s *BybitClientRequest) GetMarketKline(ctx context.Context, opts ...RequestOption) (res *models.MarketKlineResponse, err error) {
 	r := &request{
 		method:   http.MethodGet,
 		endpoint: "/v5/market/kline",
 		secType:  secTypeNone,
 	}
 	data, err := SendRequest(ctx, opts, r, s, err)
-	return GetServerResponse(err, data)
+	return GetMarketKlineResponse(data)
 }
 
-func GetMarketKlineResponse(err error, data []byte, res *models.MarketKlineResponse) (*models.MarketKlineResponse, *models.MarketKlineResponse, error) {
+func GetMarketKlineResponse(data []byte) (*models.MarketKlineResponse, error) {
 	j, err := newJSON(data)
 	if err != nil {
-		return nil, nil, err
+		return nil, err
 	}
 	result := j.Get("result")
-	res = new(models.MarketKlineResponse)
+	res := new(models.MarketKlineResponse)
 	res.Category = models.Category(result.Get("category").MustString())
 	res.Symbol = result.Get("symbol").MustString()
 	list := result.Get("list").MustArray()
@@ -42,7 +42,7 @@ func GetMarketKlineResponse(err error, data []byte, res *models.MarketKlineRespo
 	for i := range list {
 		item := result.Get("list").GetIndex(i)
 		if len(item.MustArray()) < 7 {
-			return nil, nil, fmt.Errorf("invalid kline response")
+			return nil, fmt.Errorf("invalid kline response")
 		}
 
 		res.List[i] = &models.MarketKlineCandle{
@@ -55,7 +55,7 @@ func GetMarketKlineResponse(err error, data []byte, res *models.MarketKlineRespo
 			Turnover:   item.GetIndex(6).MustString(),
 		}
 	}
-	return res, nil, nil
+	return res, nil
 }
 
 func (s *BybitClientRequest) GetMarkPriceKline(ctx context.Context, opts ...RequestOption) (res *ServerResponse, err error) {
