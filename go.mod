@@ -19,3 +19,5 @@ require (
 	golang.org/x/net v0.29.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/bybit-exchange/bybit.go.api => github.com/mmpk/bybitgo
