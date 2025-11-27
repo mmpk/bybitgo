@@ -2,8 +2,9 @@ package bybit_connector
 
 import (
 	"context"
-	"github.com/bybit-exchange/bybit.go.api/handlers"
 	"net/http"
+
+	"github.com/mmpk/bybitgo/handlers"
 )
 
 func (s *BybitClientRequest) GetInsLoanInfo(ctx context.Context, opts ...RequestOption) (res *ServerResponse, err error) {

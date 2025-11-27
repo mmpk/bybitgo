@@ -1,9 +1,10 @@
-module github.com/bybit-exchange/bybit.go.api
+module github.com/mmpk/bybitgo
 
 go 1.21
 
 require (
 	github.com/bitly/go-simplejson v0.5.1
+	github.com/bybit-exchange/bybit.go.api v0.0.0-20250727214011-c9347d6804d6
 	github.com/google/uuid v1.5.0
 	github.com/gorilla/websocket v1.5.1
 	github.com/json-iterator/go v1.1.12
@@ -19,4 +20,3 @@ require (
 	golang.org/x/net v0.29.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-

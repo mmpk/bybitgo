@@ -2,8 +2,9 @@ package bybit_connector
 
 import (
 	"context"
-	"github.com/bybit-exchange/bybit.go.api/handlers"
 	"net/http"
+
+	"github.com/mmpk/bybitgo/handlers"
 )
 
 // Deprecated: GetLeverageTokenInfo is deprecated.

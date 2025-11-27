@@ -7,7 +7,6 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
-	"github.com/bybit-exchange/bybit.go.api/models"
 	"io"
 	"log"
 	"net/http"
@@ -16,9 +15,11 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/mmpk/bybitgo/models"
+
 	"github.com/bitly/go-simplejson"
-	"github.com/bybit-exchange/bybit.go.api/handlers"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/mmpk/bybitgo/handlers"
 )
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
