@@ -1,4 +1,4 @@
-module github.com/mmpk/bybitgo
+module github.com/mmpk/bybitgo/v1.0.0
 
 go 1.24.10
 
@@ -7,6 +7,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/websocket v1.5.3
 	github.com/json-iterator/go v1.1.12
+	github.com/mmpk/bybitgo v0.0.0-20251129174953-ae5ecbbe938b
 	github.com/stretchr/testify v1.11.1
 )
 
