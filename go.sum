@@ -1,7 +1,5 @@
 github.com/bitly/go-simplejson v0.5.1 h1:xgwPbetQScXt1gh9BmoJ6j9JMr3TElvuIyjR8pgdoow=
 github.com/bitly/go-simplejson v0.5.1/go.mod h1:YOPVLzCfwK14b4Sff3oP1AmGhI9T9Vsg84etUnlyp+Q=
-github.com/bybit-exchange/bybit.go.api v0.0.0-20250727214011-c9347d6804d6 h1:41FLQtKmxWEdyjdgrAm9lZFdS0Ax2XsDxkd/fuztsyQ=
-github.com/bybit-exchange/bybit.go.api v0.0.0-20250727214011-c9347d6804d6/go.mod h1:P22TFRynmYRrquJCPalKxZgIIIc9+PkC4kQPeejitsI=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
