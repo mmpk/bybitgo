@@ -158,6 +158,22 @@ func (b *WebSocket) SendSubscription(args []string) (*WebSocket, error) {
 	return b, nil
 }
 
+func (b *WebSocket) SendUnsubscription(args []string) (*WebSocket, error) {
+	reqID := uuid.New().String()
+	subMessage := map[string]interface{}{
+		"req_id": reqID,
+		"op":     "unsubscribe",
+		"args":   args,
+	}
+	fmt.Println("unsubscribe msg:", fmt.Sprintf("%v", subMessage["args"]))
+	if err := b.sendAsJson(subMessage); err != nil {
+		fmt.Println("Failed to send subscription:", err)
+		return b, err
+	}
+	fmt.Println("Unsubscription sent successfully.")
+	return b, nil
+}
+
 // SendRequest sendRequest sends a custom request over the WebSocket connection.
 func (b *WebSocket) SendRequest(op string, args map[string]interface{}, headers map[string]string, reqId ...string) (*WebSocket, error) {
 	finalReqId := uuid.New().String()
